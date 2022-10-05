@@ -1,0 +1,79 @@
+.container-login{
+  background-image: url("../../assets/fondo.png");
+  background-repeat: no-repeat;
+  background-size: 10;
+  height: 100vh;
+  background-size: cover;
+}
+.login-card{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
+.login-card-container{
+  background: rgba(3,3,3,0.25);
+  width: 25%;
+  height: 40%;
+  border-radius: 10px;
+  text-align: center;
+}
+input{
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-decoration: none;
+  position: relative;
+  width: 80%;
+  display: block;
+  margin: 9px auto;
+  font-size: 17px;
+  color: #fff;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  background: rgba(3,3,3,.1);
+  -webkit-transition: all 2s ease-in-out;
+  -moz-transition: all 2s ease-in-out;
+  -o-transition: all 2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+input:focus{
+  outline: none;
+  box-shadow: 3px 3px 10px #333;
+  background: rgba(3,3,3,.18);
+}
+.login-card-container--title{
+  font-family: 'Open Sans Condensed', sans-serif;
+  position: relative;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 40px;
+  color: #ddd;
+  text-shadow: 3px 3px 10px #000;
+}
+.login-card-container--form{
+  margin: 50px 20px 50px 20px;
+}
+.login-button{
+  margin-top: 40px;
+  width: 50%;
+  height: 40px;
+  border-radius: 20px
+}
+::-webkit-input-placeholder {
+  color: #fff;  
+}
+.container-input{
+  margin-bottom: 25px
+}
+.container-input--invalid{
+  padding: 0px;
+  margin: 0px;
+  font-size: 13px;
+  color: #7c2020;
+}
+
+@media (max-width: 700px) {
+  .login-card-container {
+    width: 90%;
+  }
+}
