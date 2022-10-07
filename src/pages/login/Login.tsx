@@ -1,11 +1,18 @@
 import LoginForm from './LoginForm'
 import { AuthCredentials } from '../../interfaces/AuthCredentials'
+import {useContext, useEffect} from 'react'
+import UserContext from '../../context/User/UserContext'
 import './Login.css'
 
+
 const Login = (): JSX.Element => {
+  const { getUser, user } = useContext(UserContext)
+
+  useEffect(() => {
+    getUser()
+  }, [])
 
   const onSubmitLogin = (user: AuthCredentials ) =>{
-      console.log(user)
   }
 
   return(

@@ -21,7 +21,7 @@ const LoginForm = ({ onSubmit }: LoginProps): JSX.Element => {
 
   const onFormSubmit = (e: MouseEvent) => {
     e.preventDefault();
-  //   // onSubmit(form)
+    onSubmit(credentials)
   }
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,8 +29,8 @@ const LoginForm = ({ onSubmit }: LoginProps): JSX.Element => {
         ...credentials,
         [event.target.name] : event.target.value
     })
-    console.log(event.target.name )
-    if(event.target.name === 'E-mail' ) isValidateEmail(event.target.value)
+
+    if(event.target.name === 'email' ) isValidateEmail(event.target.value)
     if(event.target.name === 'password' ) isValidatePassword(event.target.value)
   }
 
@@ -52,12 +52,12 @@ const LoginForm = ({ onSubmit }: LoginProps): JSX.Element => {
     <form>
       <div className='container-input'>
         <input 
-          placeholder='E-mail' 
+          placeholder='email' 
           onChange={handleInputChange} 
-          name='E-mail' 
-          onFocus={() =>onFocus('E-mail')}
+          name='email' 
+          onFocus={() =>onFocus('email')}
           />
-        {!isEmailValidate && onFocusInput === 'E-mail' && 
+        {!isEmailValidate && onFocusInput === 'email' && 
           <p  className='container-input--invalid'>E-mail invalido</p>
         }
       </div>
