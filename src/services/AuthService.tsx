@@ -1,16 +1,16 @@
+import axios  from "axios";
 import { AuthCredentials } from "../interfaces/AuthCredentials";
 
 
-export const reqLogin = async ({ email, password }: AuthCredentials): Promise<AuthCredentials | null> => {
+export const reqLogin = async ({ email, password }: AuthCredentials): Promise<any> => {
+
   try {
-    // Change to real axios call when connecting with an API
-    const res = 
-      { 
-        "email": "rverioska@gmail.com", 
-        "password": "1234"
-      }
-    ;
-    return res || null;
+    const res = await axios.post<AuthCredentials | null>(`https://userapi.free.beeceptor.com/v1/login`,{
+      "email": email, 
+      "password": password
+    })
+
+    return res|| null;
   } catch (error) {
     console.error(error);
     return null;
