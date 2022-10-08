@@ -1,0 +1,19 @@
+.container-home{
+  position: absolute;
+  left: 45%;
+  top:30%;
+  width: 100%;
+}
+.content-table__thead{
+  background: var(--background-primary);
+}
+th, td {
+  width: 25%;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: 0.3em;
+  caption-side: bottom;
+  text-align: center;
+}
