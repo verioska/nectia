@@ -9,8 +9,7 @@ interface Action {
 
 const ChractersReducer = (state: any, action: Action): any => {
   const { type, payload } = action;
-console.log(state, "state")
-console.log(payload, "payload")
+
    switch (type) {
      case SET_CHARACTERS:
        return {

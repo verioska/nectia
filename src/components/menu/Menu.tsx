@@ -7,8 +7,8 @@ const Menu = (): JSX.Element => {
     <header className="container__header">            
       <div className="barra">
         <ul>
-          <li><a href="Index.html">Inicio</a></li>
-          <li><a href="contacto.html">Agregar personajes</a></li>
+          <li><a href="/home">Inicio</a></li>
+          <li><a href="/createCharacter">Agregar personajes</a></li>
         </ul>
       </div> 
     </header>

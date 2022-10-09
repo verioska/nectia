@@ -1,7 +1,12 @@
 import { useReducer, ReactNode } from 'react'
 import UserReducer from './CharactersReducer'
 import CharactersContext from './CharactersContext';
-import { getCharactersService, deleteCharactersService } from '../../services/CharactersService'
+import { 
+  getCharactersService, 
+  deleteCharactersService, 
+  createCharactersService,
+  editCharactersService
+} from '../../services/CharactersService'
 import { SET_CHARACTERS, SET_CHARACTERS_DELETE } from '../types';
 
 interface Props {
@@ -37,12 +42,42 @@ const CharactersProvider = ({children} : Props): JSX.Element => {
     }
   }
 
+  const createCharacters = async (character:any ) =>{
+    try {
+      const isCharacters ={
+        "name": character.name,
+        "lastName": character.lastName,
+        "gender": character.gender
+      }
+      const characters = await createCharactersService(isCharacters)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+  
+  const editCharacters = async (character:any, id: string ) =>{
+    try {
+      const isCharacters ={
+        "name": character.name,
+        "lastName": character.lastName,
+        "gender": character.gender
+      }
+      const characters = await editCharactersService(isCharacters, id)
+      getCharacters()
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+
 
   const { characters } = state;
   const providerValue = {
     characters: characters || null,
     getCharacters,
-    deleteCharacters
+    deleteCharacters,
+    createCharacters,
+    editCharacters
   }
 
   return(

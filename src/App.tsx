@@ -6,10 +6,11 @@ import  Home  from './pages/home/Home'
 import ProtectedRoute from '../src/protected-route/ProtectedRoute'
 import Menu from './components/menu/Menu';
 import CharactersProvider from './context/Characters/CharactersProvider';
+import CreateCharacter from './pages/createCharacter/CreateCharacter';
 
 function App() {
   const [menuIsVisible, setMenuIsVisible] = useState<boolean>(false)
-  const [routesThatDontAllowMenu, ] = useState<any[]>(['/home'])
+  const [routesThatDontAllowMenu, ] = useState<any[]>(['/home','/createCharacter'])
   const location = useLocation();
 
   useEffect(() => {
@@ -26,6 +27,9 @@ function App() {
           }/>
           <Route path="/home" element={
             <ProtectedRoute routeType="protected"><Home /></ProtectedRoute>
+          }/>
+          <Route path="/createCharacter" element={
+            <ProtectedRoute routeType="protected"><CreateCharacter /></ProtectedRoute>
           }/>
         </Routes>
         {menuIsVisible && <Menu/>}
