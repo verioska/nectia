@@ -1,20 +1,24 @@
 import { useEffect } from "react"
-import axiosInstance from "../../axiosInstance/CustomAxios"
 import HomeTable from './HomeTable'
+import { useCharacters } from '../../hooks/useCharacters'
 import './Home.css'
 
 const Home = (): JSX.Element => {
-
-  useEffect(() => {
-   const a = axiosInstance.get('characters')
+  const { getCharacters, deleteCharacters } = useCharacters();
   
+  useEffect(() =>  {
+    // getCharacters()
   }, [])
 
+  const deleteCharacter = (value:string)   =>  {
+    deleteCharacters(value)
+  }
 
-  
   return(
     <div className="container-home">
-      <HomeTable/>
+      <HomeTable 
+        deleteCharacter={deleteCharacter}
+      />
     </div>
   )
 }

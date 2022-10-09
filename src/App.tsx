@@ -5,6 +5,7 @@ import UserProvider from '../src/context/User/UserProvider'
 import  Home  from './pages/home/Home'
 import ProtectedRoute from '../src/protected-route/ProtectedRoute'
 import Menu from './components/menu/Menu';
+import CharactersProvider from './context/Characters/CharactersProvider';
 
 function App() {
   const [menuIsVisible, setMenuIsVisible] = useState<boolean>(false)
@@ -17,17 +18,19 @@ function App() {
 
 
   return (
-    <UserProvider>
-      <Routes>
-        <Route  path="/" element={
-          <ProtectedRoute routeType="public-only"><Login /></ProtectedRoute>
-        }/>
-        <Route path="/home" element={
-          <ProtectedRoute routeType="protected"><Home /></ProtectedRoute>
-        }/>
-      </Routes>
-      {menuIsVisible && <Menu/>}
-    </UserProvider>
+    <CharactersProvider>
+      <UserProvider>
+        <Routes>
+          <Route  path="/" element={
+            <ProtectedRoute routeType="public-only"><Login /></ProtectedRoute>
+          }/>
+          <Route path="/home" element={
+            <ProtectedRoute routeType="protected"><Home /></ProtectedRoute>
+          }/>
+        </Routes>
+        {menuIsVisible && <Menu/>}
+      </UserProvider>
+    </CharactersProvider>
   );
 }
 
