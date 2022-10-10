@@ -4,7 +4,7 @@
   top: 30%;
   width: 40%;
   height: 50%;
-  background-color: #f6f4f2;
+  background-color: var(--background-secondary);
   border-radius: 18px;
   box-shadow: 1px 1px 8px 0px #dddddd;
 }

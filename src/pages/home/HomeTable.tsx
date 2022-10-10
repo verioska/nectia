@@ -28,7 +28,7 @@ const HomeTable = ({deleteCharacter, editCharacter}: HomeTableProps): JSX.Elemen
                     <td>{character.lastName}</td>
                     <td>{character.gender}</td>
                     <td>
-                      <div onClick={() => editCharacter(character.id)} ><i className="fa-solid fa-user-pen"></i></div>
+                      <div className="icn-edit" onClick={() => editCharacter(character.id)} ><i className="fa-solid fa-user-pen"></i></div>
                       <div onClick={() => deleteCharacter(character.id)}><i className="fa-solid fa-trash"></i></div>
                     </td>
                   </tr>

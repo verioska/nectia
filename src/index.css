@@ -15,4 +15,5 @@ code {
 :root {
   --background: #f9fafe;
   --background-primary: rgba(23, 78, 112, 0.98);
+  --background-secondary: #f6f4f2;
 }

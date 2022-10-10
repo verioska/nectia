@@ -14,8 +14,9 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
+    console.log(location, "location")
     setMenuIsVisible(routesThatDontAllowMenu.find((route:any) => location.pathname === route) !== undefined)
-  }, [])
+  }, [location])
 
 
   return (

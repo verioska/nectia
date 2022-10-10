@@ -1,11 +1,13 @@
 .container-home{
+  height: 50px;
   position: absolute;
-  left: 45%;
-  top:30%;
-  width: 100%;
+  top: 40%;
+  left: 40%; 
+  margin: -25px 0 0 -25px;
 }
 .content-table__thead{
   background: var(--background-primary);
+  color: white;
 }
 th, td {
   width: 25%;
@@ -20,4 +22,7 @@ th, td {
 }
 .fa-solid{
   margin-left: 26px;
+}
+.icn-edit{
+  margin-bottom: 10px;
 }
