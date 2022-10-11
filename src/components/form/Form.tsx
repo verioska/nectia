@@ -1,6 +1,6 @@
 import { useState, MouseEvent } from 'react'
+import { useCharacters } from '../../hooks/useCharacters'
 import { Charactert } from '../../interfaces/Charactert'
-
 import './Form.css'
 
 interface FormProps {
@@ -11,10 +11,14 @@ interface FormProps {
 
 const Form = ({ onSubmit, valueState, closeForm }: FormProps): JSX.Element => {
   const [character, setCharacter] = useState<Charactert>(valueState)
+  const { message } = useCharacters();
 
+  
   const onFormSubmit = (e: MouseEvent) => {
     e.preventDefault();
     onSubmit(character)
+    setCharacter({'name':'', 'lastName':'', 'gender':''})
+    closeForm()
   }
 
   const handleInputChange = (event: any) => {
@@ -24,9 +28,11 @@ const Form = ({ onSubmit, valueState, closeForm }: FormProps): JSX.Element => {
     })
   }
 
+
   const disabledBtn = character.name === '' &&  character.lastName === '' &&  character.gender === ''
 
   return(
+    <>
     <form className="container-form" >
       <div onClick={closeForm} className="container-form__close">X</div>
       <div className="container-create-character__title">Ingresar Personajes</div>
@@ -51,7 +57,7 @@ const Form = ({ onSubmit, valueState, closeForm }: FormProps): JSX.Element => {
           />
       </div>
       <div>
-        <label className="container-input__label">Seleccione el genero</label>
+        <label className="container-input__label">Seleccione el género</label>
         <select 
           name='gender' 
           className="select-form"
@@ -68,7 +74,9 @@ const Form = ({ onSubmit, valueState, closeForm }: FormProps): JSX.Element => {
           disabled={disabledBtn}
           className='button-form__btn'>Crear</button>
       </div>
+        <div className="container-form__send">{message}</div> 
     </form>
+    </>
   )
 }
 

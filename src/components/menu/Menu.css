@@ -22,7 +22,10 @@
 .barra img{
   padding-top: 30px;
   padding-left: 10px;
-  width: 100%;
+  width: 50%;
+}
+.barra-img{
+  text-align: center;
 }
 .barra{
   height: 100vh;
@@ -43,11 +46,11 @@
 }
 
 .barra li{
-  border-top:1px solid #03121b;
+  border-top:1px solid #2f8bc3;
   width:100%;
 }
 .barra ul:last-of-type{
-  border-bottom: 1px solid #03121b;
+  border-bottom: 1px solid #2f8bc3;
 }
 .barra a:hover{ 
   font-size: 22px;
@@ -68,5 +71,19 @@
 .close{
   float: right;
   margin: 16px;
+  font-size: 24px;
 }
 
+
+
+@media (max-width: 700px) {
+  .barra img{
+    display: none;
+  }
+  .barra {
+    width: 89%;
+    position: fixed;
+    margin-top: 42px;
+    height: 139px;
+  }
+}

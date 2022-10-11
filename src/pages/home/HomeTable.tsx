@@ -1,5 +1,4 @@
 import { useCharacters } from "../../hooks/useCharacters";
-import { Charactert } from "../../interfaces/Charactert";
 
 
 interface HomeTableProps {
@@ -17,7 +16,7 @@ const HomeTable = ({deleteCharacter, editCharacter, arrCharacters}: HomeTablePro
         <thead className="content-table__thead"> 
           <tr><th>Nombre</th> 
           <th>Apellido</th> 
-          <th>Genero</th> 
+          <th>Género</th> 
           <th>Acciones</th> 
           </tr> 
         </thead> 

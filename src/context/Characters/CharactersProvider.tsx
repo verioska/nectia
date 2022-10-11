@@ -12,7 +12,8 @@ import {
   SET_CHARACTERS, 
   SET_CHARACTERS_DELETE, 
   SET_ROW_FILTER,
-  SET_ROW_FILTER_TOTAL
+  SET_ROW_FILTER_TOTAL,
+  SET_CHARACTERS_MESSAGE,
 } from '../types'
 import { CharactertsInfo } from '../../interfaces/CharactertsState'
 import { Charactert } from '../../interfaces/Charactert'
@@ -30,7 +31,8 @@ const CharactersProvider = ({children} : Props): JSX.Element => {
   const initialState: CharactertsInfo = initializeState({
     characters: [],
     rowFilter: 10,
-    arrRowFilter: []
+    arrRowFilter: [],
+    message: ''
   })
 
   const [state, dispatch] = useReducer(UserReducer, initialState)
@@ -71,6 +73,10 @@ const CharactersProvider = ({children} : Props): JSX.Element => {
         "gender": character.gender
       }
       await createCharactersService(isCharacters)
+      dispatch({ type: SET_CHARACTERS_MESSAGE, payload: {message : 'Formulario Enviado' }})
+      setTimeout(() => {
+        dispatch({ type: SET_CHARACTERS_MESSAGE, payload: {message : '' }})
+      }, 1000);
     } catch (error) {
       console.error(error)
     }
@@ -87,6 +93,7 @@ const CharactersProvider = ({children} : Props): JSX.Element => {
       getCharacters()
     } catch (error) {
       console.error(error)
+      dispatch({ type: SET_CHARACTERS_MESSAGE, payload: {message : 'Por favor volver a intentar' }})
     }
   }
 
@@ -96,7 +103,7 @@ const CharactersProvider = ({children} : Props): JSX.Element => {
 
 
 
-  const { characters, arrRowFilter, rowFilter } = state;
+  const { characters, arrRowFilter, rowFilter, message } = state;
   const providerValue = {
     characters: characters || null,
     getCharacters,
@@ -107,6 +114,7 @@ const CharactersProvider = ({children} : Props): JSX.Element => {
     arrRowFilter: arrRowFilter || null,
     totalRow,
     rowFilter: rowFilter || null,
+    message: message || null
   }
 
   return(

@@ -11,4 +11,5 @@ export interface CharacterProvider {
   arrRowFilter: any[],
   totalRow: (total: number) => void,
   rowFilter: number,
+  message: string
 }

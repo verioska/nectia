@@ -1,5 +1,11 @@
 import { CharactertsInfo } from "../../interfaces/CharactertsState";
-import { SET_CHARACTERS, SET_CHARACTERS_DELETE, SET_ROW_FILTER, SET_ROW_FILTER_TOTAL } from "../types";
+import { 
+  SET_CHARACTERS, 
+  SET_CHARACTERS_DELETE, 
+  SET_ROW_FILTER, 
+  SET_ROW_FILTER_TOTAL,
+  SET_CHARACTERS_MESSAGE
+} from "../types";
 
 
 interface Action {
@@ -32,6 +38,11 @@ const ChractersReducer = (state: CharactertsInfo, action: Action): any => {
             ...state,
             rowFilter: payload?.rowFilter,
           }
+        case SET_CHARACTERS_MESSAGE:
+        return {
+          ...state,
+          message: payload?.message,
+        }
       default:
        return state;
    }

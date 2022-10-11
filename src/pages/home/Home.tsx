@@ -83,11 +83,14 @@ const Home = (): JSX.Element => {
         </div>}
       <div className="container-home">
       {!showModalEdit && characters.length > 0 &&
+      <div>
         <HomeTable 
           deleteCharacter={deleteCharacter}
           editCharacter={editCharacter}
           arrCharacters={filterCharacters}
-          />}
+          />
+      </div>}
+        
       </div>
       {showModalEdit && 
         <div className="container-form-home">

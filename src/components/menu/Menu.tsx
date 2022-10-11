@@ -1,13 +1,20 @@
+import { useNavigate } from 'react-router-dom';
 import './Menu.css'
 
 const Menu = (): JSX.Element => {
+  const navigate = useNavigate();
+  
+  const closeSection = () =>{
+    localStorage.removeItem('authToken');
+    navigate("/")
+  }
 
   return(
    <div>
     <header className="container__header"> 
-      <i className="fa-solid fa-right-to-bracket close"></i>      
+      <div onClick={() => closeSection()}><i className="fa-solid fa-right-to-bracket close"></i></div>    
       <div className="barra">
-        <div>
+        <div className="barra-img">
           <img src={require("../../assets/logo.png")}/>
         </div>
         <ul>
