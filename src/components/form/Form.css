@@ -29,7 +29,6 @@
   box-shadow: 3px 3px 10px #333;
   background: rgba(3,3,3,.18);
 }
-
 .container-input-form{
   margin-bottom: 25px;
 }
@@ -52,6 +51,12 @@
 .container-button-form{
   display: flex;
   justify-content: center;
+}
+.container-form__close{
+  float: right;
+  margin-top: -34px;
+  margin-right: 20px;
+  font-weight: 900;
 }
 
 

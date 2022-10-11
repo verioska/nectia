@@ -14,7 +14,6 @@ const CreateCharacter = (): JSX.Element =>{
 
   return(
     <div className="container-create-character">
-      <div className="container-create-character__title">Ingresar Personajes</div>
       <Form 
         onSubmit={onSubmitCreateCharacter}
         valueState={{
@@ -22,6 +21,7 @@ const CreateCharacter = (): JSX.Element =>{
               'lastName': '',
               'gender': ''}
         }
+        closeForm={() => {}}
       />
     </div>
   )

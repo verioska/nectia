@@ -6,9 +6,10 @@ import './Form.css'
 interface FormProps {
   onSubmit: (form: any) => void
   valueState: Charactert
+  closeForm: () => void
 }
 
-const Form = ({ onSubmit, valueState }: FormProps): JSX.Element => {
+const Form = ({ onSubmit, valueState, closeForm }: FormProps): JSX.Element => {
   const [character, setCharacter] = useState<Charactert>(valueState)
 
   const onFormSubmit = (e: MouseEvent) => {
@@ -27,6 +28,8 @@ const Form = ({ onSubmit, valueState }: FormProps): JSX.Element => {
 
   return(
     <form className="container-form" >
+      <div onClick={closeForm} className="container-form__close">X</div>
+      <div className="container-create-character__title">Ingresar Personajes</div>
       <div className='container-input-form'>
         <label className="container-input__label">Ingresa el nombre</label>
         <input 

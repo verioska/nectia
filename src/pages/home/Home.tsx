@@ -55,6 +55,10 @@ const Home = (): JSX.Element => {
     }
   }
 
+  const closeForm = () =>{
+    setShowModalEdit(false)
+  }
+
   const filterCharacters = arrCharacters.length ? arrCharacters : characters
 
   return(
@@ -87,7 +91,6 @@ const Home = (): JSX.Element => {
       </div>
       {showModalEdit && 
         <div className="container-form-home">
-          <div className="container-create-character__title">Ingresar Personajes</div>
           <Form 
             onSubmit={onSubmitCreateCharacter}
             valueState={{
@@ -95,6 +98,7 @@ const Home = (): JSX.Element => {
                   'lastName': selectedCharacters.lastName,
                   'gender': selectedCharacters.gender}
               }
+            closeForm={closeForm}
           />
         </div>
        }
