@@ -18,7 +18,7 @@
   border-radius: 10px;
   text-align: center;
 }
-input{
+.input-login{
   font-family: 'Open Sans Condensed', sans-serif;
   text-decoration: none;
   position: relative;
@@ -36,7 +36,7 @@ input{
   -o-transition: all 2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-input:focus{
+.input-login:focus{
   outline: none;
   box-shadow: 3px 3px 10px #333;
   background: rgba(3,3,3,.18);

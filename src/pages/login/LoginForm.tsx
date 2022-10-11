@@ -56,6 +56,7 @@ const LoginForm = ({ onSubmit }: LoginProps): JSX.Element => {
           onChange={handleInputChange} 
           name='email' 
           onFocus={() =>onFocus('email')}
+          className="input-login"
           />
         {!isEmailValidate && onFocusInput === 'email' && 
           <p  className='container-input--invalid'>E-mail invalido</p>
@@ -66,7 +67,9 @@ const LoginForm = ({ onSubmit }: LoginProps): JSX.Element => {
           placeholder='Password' 
           onChange={handleInputChange} 
           onFocus={() =>onFocus('password')}
-          name='password' />
+          name='password' 
+          className="input-login"
+          />
         {!isPasswordValidate && onFocusInput === 'password' &&
           <p className='container-input--invalid'>Ingresar clave mayor de 4 digitos</p>
         }

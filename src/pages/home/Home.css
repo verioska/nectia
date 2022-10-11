@@ -2,12 +2,14 @@
   height: 50px;
   position: absolute;
   top: 40%;
-  left: 40%; 
-  margin: -25px 0 0 -25px;
+  left: 25%; 
 }
 .content-table__thead{
   background: var(--background-primary);
   color: white;
+}
+.content-table{
+  width: 1253px;
 }
 th, td {
   width: 25%;
@@ -25,4 +27,29 @@ th, td {
 }
 .icn-edit{
   margin-bottom: 10px;
+}
+.container-form-home{
+  background-color: var(--background-secondary);
+  border-radius: 18px;
+  box-shadow: 1px 1px 8px 0px #dddddd;
+  position: absolute;
+  top: 30%;
+  left: 59%;
+  margin: -25px 0 0 -25px;
+  height: 50%;
+}
+.container-select-page{
+  height: 50px;
+  position: absolute;
+  top: 32%;
+  left: 25%;
+  display: flex;
+  justify-content: space-between;
+  width: 66%;
+}
+.container-select-page__row-filter{
+  margin-left: 15px;
+}
+.container-select-page__filter{
+  display: flex;
 }

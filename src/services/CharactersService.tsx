@@ -1,4 +1,5 @@
 import axiosInstance from '../axiosInstance/AxiosInstance'
+import { Charactert } from '../interfaces/Charactert';
 
 
 export const getCharactersService = async (): Promise<any> => {
@@ -22,7 +23,7 @@ export const deleteCharactersService = async (id: any): Promise<any> => {
   }
 }
 
-export const createCharactersService = async (character: any): Promise<any> => {
+export const createCharactersService = async (character: Charactert): Promise<any> => {
   try {
     const res = axiosInstance.post(`characters`,character)
     return res|| null;
@@ -32,7 +33,7 @@ export const createCharactersService = async (character: any): Promise<any> => {
   }
 }
 
-export const editCharactersService = async (character: any, id: string): Promise<any> => {
+export const editCharactersService = async (character:  Charactert, id: string): Promise<any> => {
   try {
     const res = axiosInstance.put(`characters/${id}`,character)
     return res|| null;
@@ -41,4 +42,15 @@ export const editCharactersService = async (character: any, id: string): Promise
     return null;
   }
 }
+
+export const getRowFilter = async (): Promise<any> => {
+  try {
+    const res = axiosInstance.get('filter')
+    return res|| null;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
 

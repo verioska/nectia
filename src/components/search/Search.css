@@ -1,0 +1,25 @@
+.search-bar {
+  position: relative;
+  display: flex;
+}
+.inpur-search{
+    text-decoration: none;
+    position: relative;
+    width: 80%;
+    display: block;
+    font-size: 17px;
+    color: var(--background-primary);
+    padding: 8px;
+    border-radius: 50px;
+    background: rgba(3,3,3,.1);
+    border: 1px solid var(--background-primary);
+}
+.icn-search{
+  position: absolute;
+  left: 145px;
+  top: 10px;
+  margin: 0px;
+}
+.inpur-search::placeholder {
+  color: var(--background-primary);
+}
